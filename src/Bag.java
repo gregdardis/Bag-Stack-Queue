@@ -76,24 +76,26 @@ public class Bag<Item> implements Iterable<Item> {
     
     /** Non JUnit testing while implementing */
     public static void main(String[] args) {
-        Bag<Integer> bag = new Bag<Integer>();
+        Bag<Integer> intBag = new Bag<>();
         int numberToAdd = 20;
         
-        System.out.println("Size before adding anything: " + bag.size());
-        System.out.println("It is empty: " + bag.isEmpty());
+        System.out.println("Size before adding anything: " + intBag.size());
+        System.out.println("Bag is empty: " + intBag.isEmpty());
+        
         for (int i = 0; i < numberToAdd; i++) {
-            bag.add(i);
+            intBag.add(i);
         }
-        System.out.println("Size after adding " + numberToAdd + " ints: " + bag.size());
-        System.out.println("It is empty: " + bag.isEmpty());
-        Iterator<Integer> bagIterator = bag.iterator();
+        
+        System.out.println("Size after adding " + numberToAdd + " ints: " + intBag.size());
+        System.out.println("Bag is empty: " + intBag.isEmpty());
+        Iterator<Integer> bagIterator = intBag.iterator();
         
         System.out.println("\nNow lets see all contents in the bag:");
         while (bagIterator.hasNext()) {
             System.out.println(bagIterator.next());
         }
         
-        System.out.println("Size still " + bag.size());
-        System.out.println("It is empty: " + bag.isEmpty());
+        System.out.println("Bag size still: " + intBag.size());
+        System.out.println("Bag is empty: " + intBag.isEmpty());
     }
 }

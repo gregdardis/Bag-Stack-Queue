@@ -3,10 +3,37 @@ import java.util.Iterator;
 public class Stack<Item> implements Iterable<Item> {
 
     private Node first;
+    private int stackSize;
     
     private class Node {
         Item item;
         Node next;
+    }
+    
+    public Stack() {
+        first = null;
+        stackSize = 0;
+    }
+    
+    public int size() {
+        return stackSize;
+    }
+    
+    public boolean isEmpty() {
+        return first == null;
+    }
+    
+    public void push(Item item) {
+        if (isEmpty()) {
+            first = new Node();
+            first.item = item;
+        } else {
+            Node oldFirst = first;
+            first = new Node();
+            first.item = item;
+            first.next = oldFirst;
+        }
+        stackSize++;
     }
     
     public Iterator<Item> iterator() {
@@ -32,7 +59,29 @@ public class Stack<Item> implements Iterable<Item> {
         }
     }
     
+    /** Non JUnit testing while implementing */
     public static void main(String[] args) {
+        Stack<Integer> intStack = new Stack<>();
+        int numberToAdd = 20;
         
+        System.out.println("Size before adding anything: " + intStack.size());
+        System.out.println("Stack is empty: " + intStack.isEmpty());
+        
+        for (int i = 0; i < numberToAdd; i++) {
+            intStack.push(i);
+        }
+        
+        System.out.println("Size after pushing " + numberToAdd + " ints: " + intStack.size());
+        System.out.println("Stack is empty: " + intStack.isEmpty());
+        
+        System.out.println("Now lets see all contents in the stack: ");
+        Iterator<Integer> stackIterator = intStack.iterator();
+        
+        while (stackIterator.hasNext()) {
+            System.out.println(stackIterator.next());
+        }
+        
+        System.out.println("Stack size still: " + intStack.size());
+        System.out.println("Stack is empty: " + intStack.isEmpty());
     }
 }
