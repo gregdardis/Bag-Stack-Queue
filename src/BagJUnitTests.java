@@ -8,6 +8,9 @@ public class BagJUnitTests {
     private static final int SIZE_ONE = 1;
     private static final int SIZE_TWO = 2;
     
+    private static final int FIRST_ADDED_ELEMENT = 5;
+    private static final int SECOND_ADDED_ELEMENT = 13;
+    
     Bag<Integer> bag = new Bag<Integer>();
     
     @Test
@@ -22,20 +25,20 @@ public class BagJUnitTests {
     
     @Test
     public void testBagIsNotEmpty() {
-        bag.add(5);
+        bag.add(FIRST_ADDED_ELEMENT);
         assertEquals(false, bag.isEmpty());
     }
     
     @Test
     public void testBagSizeOne() {
-        bag.add(5);
+        bag.add(FIRST_ADDED_ELEMENT);
         assertEquals(SIZE_ONE, bag.size());
     }
     
     @Test
     public void testBagSizeTwo() {
-        bag.add(5);
-        bag.add(0);
+        bag.add(FIRST_ADDED_ELEMENT);
+        bag.add(SECOND_ADDED_ELEMENT);
         assertEquals(SIZE_TWO, bag.size());
     }
 }

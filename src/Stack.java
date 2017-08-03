@@ -21,7 +21,7 @@ public class Stack<Item> implements Iterable<Item> {
     }
     
     public boolean isEmpty() {
-        return first == null;
+        return stackSize == 0;
     }
     
     public void push(Item item) {
