@@ -1,6 +1,14 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * This class is a Linked List implementation of the stack data structure, which can hold any
+ * object or primitive. The wrapper classes must be used for primitives. 
+ * 
+ * This stack has methods to return the size, whether or not it is empty, pushing an
+ * item to the stack, or popping an item off the stack.
+ * It also has an iterator which can be used to see all contents of the bag.
+ */
 public class Stack<Item> implements Iterable<Item> {
 
     private Node first;
