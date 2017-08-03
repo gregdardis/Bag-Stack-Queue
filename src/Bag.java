@@ -1,6 +1,16 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * This class is a Linked List implementation of the bag data structure, which can hold any
+ * object or primitive. The wrapper classes must be used for primitives. 
+ * 
+ * This bag has methods to return the size, whether or not it is empty, or to add an
+ * item to the bag. It also has an iterator which can be used to see all contents
+ * of the bag.
+ * 
+ * @author Greg Dardis
+ */
 public class Bag<Item> implements Iterable<Item> {
 
     private Node first;
