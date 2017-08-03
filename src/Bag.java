@@ -60,11 +60,30 @@ public class Bag<Item> implements Iterable<Item> {
         }
         
         public void remove() {
-            throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException("Remove method can be buggy so it is not implemented in this bag iterator.");
         }
     }
     
+    /** Non JUnit testing while implementing */
     public static void main(String[] args) {
-        // testing
+        Bag<Integer> bag = new Bag<Integer>();
+        int numberToAdd = 20;
+        
+        System.out.println("Size before adding anything: " + bag.size());
+        System.out.println("It is empty: " + bag.isEmpty());
+        for (int i = 0; i < numberToAdd; i++) {
+            bag.add(i);
+        }
+        System.out.println("Size after adding " + numberToAdd + " ints: " + bag.size());
+        System.out.println("It is empty: " + bag.isEmpty());
+        Iterator<Integer> bagIterator = bag.iterator();
+        
+        System.out.println("\nNow lets see all contents in the bag:");
+        while (bagIterator.hasNext()) {
+            System.out.println(bagIterator.next());
+        }
+        
+        System.out.println("Size still " + bag.size());
+        System.out.println("It is empty: " + bag.isEmpty());
     }
 }
