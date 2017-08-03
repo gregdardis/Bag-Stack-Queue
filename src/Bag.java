@@ -7,9 +7,8 @@ import java.util.NoSuchElementException;
  * 
  * This bag has methods to return the size, whether or not it is empty, or to add an
  * item to the bag. It also has an iterator which can be used to see all contents
- * of the bag.
+ * of the bag. There is no method implemented to remove an item from the bag.
  * 
- * @author Greg Dardis
  */
 public class Bag<Item> implements Iterable<Item> {
 

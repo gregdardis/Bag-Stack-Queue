@@ -8,3 +8,5 @@ The bag has methods to get it's size, if it's empty or not, and to add an item t
 The stack has methods to get it's size, if it's empty or not, to push an item onto the stack, and to pop the most recently added item off the stack (last in first out).  
 
 The queue has methods to get it's size, if it's empty or not, to add an item to the end of the queue (enqueue) and to get an item from the start of the queue (dequeue) (first in first out).
+
+Unit testing done for all three classes using JUnit. Simple demonstrations of functions in each main() method with print statements to the console.
