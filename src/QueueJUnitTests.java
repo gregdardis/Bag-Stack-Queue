@@ -36,12 +36,12 @@ public class QueueJUnitTests implements JUnitConstants {
     }
     
     @Test(expected = NoSuchElementException.class)
-    public void testPopEmptyStack() {
+    public void testRemoveFromEmptyQueue() {
         intQueue.dequeue();
     }
     
     @Test(expected = IllegalArgumentException.class)
-    public void testPushNull() {
+    public void testAddNull() {
         intQueue.enqueue(null);
     }
     
