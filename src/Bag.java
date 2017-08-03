@@ -36,6 +36,9 @@ public class Bag<Item> implements Iterable<Item> {
     }
     
     public void add(Item item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Cannot add null item to bag.");
+        }
         if (isEmpty()) {
             first = new Node();
             first.item = item;

@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class Stack<Item> implements Iterable<Item> {
 
@@ -24,6 +25,9 @@ public class Stack<Item> implements Iterable<Item> {
     }
     
     public void push(Item item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Cannot push null item to stack.");
+        }
         if (isEmpty()) {
             first = new Node();
             first.item = item;
@@ -34,6 +38,16 @@ public class Stack<Item> implements Iterable<Item> {
             first.next = oldFirst;
         }
         stackSize++;
+    }
+    
+    public Item pop() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Stack is empty, can't pop anything off.");
+        }
+        Item item = first.item;
+        first = first.next;
+        stackSize--;
+        return item;
     }
     
     public Iterator<Item> iterator() {
@@ -71,10 +85,10 @@ public class Stack<Item> implements Iterable<Item> {
             intStack.push(i);
         }
         
-        System.out.println("Size after pushing " + numberToAdd + " ints: " + intStack.size());
+        System.out.println("\nSize after pushing " + numberToAdd + " ints: " + intStack.size());
         System.out.println("Stack is empty: " + intStack.isEmpty());
         
-        System.out.println("Now lets see all contents in the stack: ");
+        System.out.println("\nNow lets see all contents in the stack: ");
         Iterator<Integer> stackIterator = intStack.iterator();
         
         while (stackIterator.hasNext()) {
@@ -82,6 +96,15 @@ public class Stack<Item> implements Iterable<Item> {
         }
         
         System.out.println("Stack size still: " + intStack.size());
+        System.out.println("Stack is empty: " + intStack.isEmpty());
+        
+        System.out.println("\nNow pop off the whole stack:");
+        
+        for (int i = 0; i < numberToAdd; i++) {
+            System.out.println(intStack.pop());
+        }
+        
+        System.out.println("Stack size: " + intStack.size());
         System.out.println("Stack is empty: " + intStack.isEmpty());
     }
 }
