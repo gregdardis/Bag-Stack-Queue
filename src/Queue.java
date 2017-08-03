@@ -1,6 +1,14 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * This class is a Linked List implementation of the queue data structure, which can hold any
+ * object or primitive. The wrapper classes must be used for primitives. 
+ * 
+ * This queue has methods to return the size, whether or not it is empty, adding an
+ * item to the back of the queue, or removing an item from the front of the queue (FIFO - first in first out).
+ * It also has an iterator which can be used to see all contents of the queue.
+ */
 public class Queue<Item> implements Iterable<Item> {
     
     private Node first;

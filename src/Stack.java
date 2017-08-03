@@ -6,8 +6,8 @@ import java.util.NoSuchElementException;
  * object or primitive. The wrapper classes must be used for primitives. 
  * 
  * This stack has methods to return the size, whether or not it is empty, pushing an
- * item to the stack, or popping an item off the stack (FIFO - first in first out).
- * It also has an iterator which can be used to see all contents of the bag.
+ * item to the stack, or popping an item off the stack (LIFO - last in first out).
+ * It also has an iterator which can be used to see all contents of the stack.
  */
 public class Stack<Item> implements Iterable<Item> {
 

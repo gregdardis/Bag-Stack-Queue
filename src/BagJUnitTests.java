@@ -34,4 +34,5 @@ public class BagJUnitTests implements JUnitConstants {
         bag.add(SECOND_ELEMENT);
         assertEquals(SIZE_TWO, bag.size());
     }
+    
 }
