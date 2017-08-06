@@ -35,4 +35,9 @@ public class BagJUnitTests implements JUnitConstants {
         assertEquals(SIZE_TWO, bag.size());
     }
     
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddNull() {
+        bag.add(null);
+    }
+    
 }
