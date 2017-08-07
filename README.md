@@ -11,4 +11,17 @@ The queue has methods to get its size, check if its empty or not, add an item to
 
 Unit testing done for all three classes using JUnit. 
 
-Bag.java, Queue.java, and Stack.java all contain `main()` methods that print simple demonstrations to the console.
+Bag.java, Queue.java, and Stack.java all contain `main()` methods that print simple demonstrations to the console. 
+
+
+# Command Line Instructions for Bag Demonstration
+(Simply replace Bag with Stack or Queue to see those demonstrations)
+
+`cd src/`
+
+Compile:  
+`javac Bag.java`
+
+Run:  
+`java Bag`
+
