@@ -7,16 +7,10 @@ import java.util.Iterator;
  * This bag has methods to return the size, whether or not it is empty, or to add an
  * item to the bag. It also has an iterator which can be used to see all contents
  * of the bag. There is no method implemented to remove an item from the bag.
- * 
  */
 public class Bag<Item> implements Iterable<Item> {
     
     LinkedList<Item> list = new LinkedList<>();
-    
-    public Bag() {
-        list.size = 0;
-        list.first = null;
-    }
     
     public int size() {
         return list.size();

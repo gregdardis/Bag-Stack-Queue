@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * This class is a Linked List implementation of the stack data structure, which can hold any
@@ -13,11 +12,6 @@ public class Stack<Item> implements Iterable<Item> {
 
     LinkedList<Item> list = new LinkedList<>();
     
-    public Stack() {
-        list.first = null;
-        list.size = 0;
-    }
-    
     public int size() {
         return list.size();
     }
@@ -26,6 +20,7 @@ public class Stack<Item> implements Iterable<Item> {
         return list.isEmpty();
     }
     
+    @Override
     public Iterator<Item> iterator() {
         return list.iterator();
     }

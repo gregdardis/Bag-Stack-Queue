@@ -3,14 +3,20 @@ import java.util.NoSuchElementException;
 
 public class LinkedList<Item> implements Iterable<Item> {
 
+    private Node first;
+    private Node last;
+    private int size;
+    
+    public LinkedList() {
+        first = null;
+        last = null;
+        size = 0;
+    }
+    
     private class Node {
         private Item item;
         private Node next;
     }
-    
-    protected Node first;
-    protected Node last;
-    protected int size;
 
     public int size() {
         return size;
@@ -20,6 +26,7 @@ public class LinkedList<Item> implements Iterable<Item> {
         return size == 0;
     }
     
+    @Override
     public Iterator<Item> iterator() {
         return new DataIterator();
     }

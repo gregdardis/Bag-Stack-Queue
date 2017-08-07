@@ -12,12 +12,6 @@ public class Queue<Item> implements Iterable<Item> {
     
     LinkedList<Item> list = new LinkedList<>();
     
-    public Queue() {
-        list.first = null;
-        list.last = null;
-        list.size = 0;
-    }
-    
     public int size() {
         return list.size();
     }
@@ -26,6 +20,7 @@ public class Queue<Item> implements Iterable<Item> {
         return list.isEmpty();
     }
     
+    @Override
     public Iterator<Item> iterator() {
         return list.iterator();
     }
