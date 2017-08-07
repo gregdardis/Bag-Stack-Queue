@@ -3,6 +3,7 @@ import java.util.Iterator;
 /**
  * This class is a Linked List implementation of the queue data structure, which can hold any
  * object or primitive. The wrapper classes must be used for primitives. 
+ * Note: The Linked List used is a custom class I created in the same package.
  * 
  * This queue has methods to return the size, whether or not it is empty, adding an
  * item to the back of the queue, or removing an item from the front of the queue (FIFO - first in first out).

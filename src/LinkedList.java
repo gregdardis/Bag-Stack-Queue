@@ -1,6 +1,16 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * This class is a basic implementation of a Linked List, to be used by the Bag, Stack and Queue classes.
+ * It can hold any object or primitive, although primitives must use their wrapper class.
+ * 
+ * The Linked List supports methods to return the size, whether or not it is empty, 
+ * and an iterator to go through all of the items in the Linked List.
+ * Items can be added to the front or back, but only removed from the front, 
+ * because that is the only implementation required in order for this Linked List
+ * to be used in a bag, stack, and queue.
+ */
 public class LinkedList<Item> implements Iterable<Item> {
 
     private Node first;

@@ -3,6 +3,7 @@ import java.util.Iterator;
 /**
  * This class is a Linked List implementation of the stack data structure, which can hold any
  * object or primitive. The wrapper classes must be used for primitives. 
+ * Note: The Linked List used is a custom class I created in the same package.
  * 
  * This stack has methods to return the size, whether or not it is empty, pushing an
  * item to the stack, or popping an item off the stack (LIFO - last in first out).

@@ -3,6 +3,7 @@ import java.util.Iterator;
 /**
  * This class is a Linked List implementation of the bag data structure, which can hold any
  * object or primitive. The wrapper classes must be used for primitives. 
+ * Note: The Linked List used is a custom class I created in the same package.
  * 
  * This bag has methods to return the size, whether or not it is empty, or to add an
  * item to the bag. It also has an iterator which can be used to see all contents
