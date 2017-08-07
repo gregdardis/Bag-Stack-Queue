@@ -10,11 +10,26 @@ import java.util.NoSuchElementException;
  * of the bag. There is no method implemented to remove an item from the bag.
  * 
  */
-public class Bag<Item> extends LinkedList<Item> implements Iterable<Item> {
+public class Bag<Item> implements Iterable<Item> {
+    
+    LinkedList<Item> list = new LinkedList<>();
     
     public Bag() {
-        size = 0;
-        first = null;
+        list.size = 0;
+        list.first = null;
+    }
+    
+    public int size() {
+        return list.size;
+    }
+    
+    public boolean isEmpty() {
+        return list.size == 0;
+    }
+    
+    @Override
+    public Iterator<Item> iterator() {
+        return list.iterator();
     }
     
     /**
@@ -23,7 +38,7 @@ public class Bag<Item> extends LinkedList<Item> implements Iterable<Item> {
      * @param item Item to add
      */
     public void add(Item item) {
-        super.addToFront(item);
+        list.addToFront(item);
     }
     
     /** Non JUnit testing while implementing */
