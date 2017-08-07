@@ -1,6 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import LinkedList.DataIterator;
+
 /**
  * This class is a Linked List implementation of the stack data structure, which can hold any
  * object or primitive. The wrapper classes must be used for primitives. 
@@ -9,11 +11,25 @@ import java.util.NoSuchElementException;
  * item to the stack, or popping an item off the stack (LIFO - last in first out).
  * It also has an iterator which can be used to see all contents of the stack.
  */
-public class Stack<Item> extends LinkedList<Item> implements Iterable<Item> {
+public class Stack<Item> implements Iterable<Item> {
 
+    LinkedList<Item> list = new LinkedList<>();
+    
     public Stack() {
-        first = null;
-        size = 0;
+        list.first = null;
+        list.size = 0;
+    }
+    
+    public int size() {
+        return list.size();
+    }
+    
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+    
+    public Iterator<Item> iterator() {
+        return list.iterator();
     }
     
     /**
@@ -22,7 +38,7 @@ public class Stack<Item> extends LinkedList<Item> implements Iterable<Item> {
      * @param item  Item to push
      */
     public void push(Item item) {
-        super.addToFront(item);
+        list.addToFront(item);
     }
     
     /**
@@ -31,7 +47,7 @@ public class Stack<Item> extends LinkedList<Item> implements Iterable<Item> {
      * @return  Item popped off the stack
      */
     public Item pop() {
-        return super.removeFirst();
+        return list.removeFirst();
     }
     
     /** Non JUnit testing while implementing */

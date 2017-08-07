@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * This class is a Linked List implementation of the bag data structure, which can hold any
@@ -20,11 +19,11 @@ public class Bag<Item> implements Iterable<Item> {
     }
     
     public int size() {
-        return list.size;
+        return list.size();
     }
     
     public boolean isEmpty() {
-        return list.size == 0;
+        return list.isEmpty();
     }
     
     @Override
