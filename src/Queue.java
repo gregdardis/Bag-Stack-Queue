@@ -1,5 +1,4 @@
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * This class is a Linked List implementation of the queue data structure, which can hold any
@@ -9,12 +8,26 @@ import java.util.NoSuchElementException;
  * item to the back of the queue, or removing an item from the front of the queue (FIFO - first in first out).
  * It also has an iterator which can be used to see all contents of the queue.
  */
-public class Queue<Item> extends LinkedList<Item> implements Iterable<Item> {
+public class Queue<Item> implements Iterable<Item> {
+    
+    LinkedList<Item> list = new LinkedList<>();
     
     public Queue() {
-        first = null;
-        last = null;
-        size = 0;
+        list.first = null;
+        list.last = null;
+        list.size = 0;
+    }
+    
+    public int size() {
+        return list.size();
+    }
+    
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+    
+    public Iterator<Item> iterator() {
+        return list.iterator();
     }
     
     /**
@@ -23,7 +36,7 @@ public class Queue<Item> extends LinkedList<Item> implements Iterable<Item> {
      * @param item  Item to insert
      */
     public void enqueue(Item item) {
-        super.addToBack(item);
+        list.addToBack(item);
     }
 
     /**
@@ -32,7 +45,7 @@ public class Queue<Item> extends LinkedList<Item> implements Iterable<Item> {
      * @return  Item removed
      */
     public Item dequeue() {
-        return super.removeFirst();
+        return list.removeFirst();
     }
     
     public static void main(String[] args) {

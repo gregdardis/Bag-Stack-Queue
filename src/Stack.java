@@ -1,8 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import LinkedList.DataIterator;
-
 /**
  * This class is a Linked List implementation of the stack data structure, which can hold any
  * object or primitive. The wrapper classes must be used for primitives. 
