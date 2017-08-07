@@ -9,29 +9,12 @@ import java.util.NoSuchElementException;
  * item to the back of the queue, or removing an item from the front of the queue (FIFO - first in first out).
  * It also has an iterator which can be used to see all contents of the queue.
  */
-public class Queue<Item> implements Iterable<Item> {
-    
-    private Node first;
-    private Node last;
-    private int queueSize;
+public class Queue<Item> extends LinkedList<Item> implements Iterable<Item> {
     
     public Queue() {
         first = null;
         last = null;
-        queueSize = 0;
-    }
-    
-    private class Node {
-        Item item;
-        Node next;
-    }
-    
-    public int size() {
-        return queueSize;
-    }
-    
-    public boolean isEmpty() {
-        return queueSize == 0;
+        size = 0;
     }
     
     /**
@@ -40,22 +23,8 @@ public class Queue<Item> implements Iterable<Item> {
      * @param item  Item to insert
      */
     public void enqueue(Item item) {
-        if (item == null) {
-            throw new IllegalArgumentException("Cannot add null item to queue.");
-        }
-        if (isEmpty()) {
-            last = new Node();
-            last.item = item;
-            first = last;
-        } else {
-            Node newLast = new Node();
-            newLast.item = item;
-            last.next = newLast;
-            last = newLast;
-        }
-        queueSize++;
+        super.addToBack(item);
     }
-    
 
     /**
      * Removes an item from the start of the Linked List queue.
@@ -63,37 +32,7 @@ public class Queue<Item> implements Iterable<Item> {
      * @return  Item removed
      */
     public Item dequeue() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Queue is empty, can't remove an item.");
-        }
-        Item item = first.item;
-        first = first.next;
-        queueSize--;
-        return item;
-    }
-    
-    
-    public Iterator<Item> iterator() {
-        return new QueueIterator();
-    }
-    
-    private class QueueIterator implements Iterator<Item> {
-        
-        private Node current = first;
-        
-        public Item next() {
-            Item nextItem = current.item;
-            current = current.next;
-            return nextItem;
-        }
-        
-        public boolean hasNext() {
-            return current != null;
-        }
-        
-        public void remove() {
-            throw new UnsupportedOperationException("Remove method can be buggy so it is not implemented in this queue iterator.");
-        }
+        return super.removeFirst();
     }
     
     public static void main(String[] args) {

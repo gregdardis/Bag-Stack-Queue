@@ -9,76 +9,19 @@ import java.util.NoSuchElementException;
  * item to the stack, or popping an item off the stack (LIFO - last in first out).
  * It also has an iterator which can be used to see all contents of the stack.
  */
-public class Stack<Item> implements Iterable<Item> {
+public class Stack<Item> extends LinkedList<Item> implements Iterable<Item> {
 
-    private Node first;
-    private int stackSize;
-    
-    private class Node {
-        Item item;
-        Node next;
-    }
-    
     public Stack() {
         first = null;
-        stackSize = 0;
-    }
-    
-    public int size() {
-        return stackSize;
-    }
-    
-    public boolean isEmpty() {
-        return stackSize == 0;
+        size = 0;
     }
     
     public void push(Item item) {
-        if (item == null) {
-            throw new IllegalArgumentException("Cannot push null item to stack.");
-        }
-        if (isEmpty()) {
-            first = new Node();
-            first.item = item;
-        } else {
-            Node oldFirst = first;
-            first = new Node();
-            first.item = item;
-            first.next = oldFirst;
-        }
-        stackSize++;
+        super.addToFront(item);
     }
     
     public Item pop() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Stack is empty, can't pop anything off.");
-        }
-        Item item = first.item;
-        first = first.next;
-        stackSize--;
-        return item;
-    }
-    
-    public Iterator<Item> iterator() {
-        return new StackIterator();
-    }
-    
-    private class StackIterator implements Iterator<Item> {
-        
-        private Node current = first;
-        
-        public Item next() {
-            Item currentItem = current.item;
-            current = current.next;
-            return currentItem;
-        }
-        
-        public boolean hasNext() {
-            return current != null;
-        }
-        
-        public void remove() {
-            throw new UnsupportedOperationException("Remove method can be buggy so it is not implemented in this stack iterator.");
-        }
+        return super.removeFirst();
     }
     
     /** Non JUnit testing while implementing */
