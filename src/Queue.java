@@ -11,7 +11,7 @@ import java.util.Iterator;
  */
 public class Queue<Item> implements Iterable<Item> {
     
-    LinkedList<Item> list = new LinkedList<>();
+    private LinkedList<Item> list = new LinkedList<>();
     
     public int size() {
         return list.size();
