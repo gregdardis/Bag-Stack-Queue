@@ -16,10 +16,20 @@ public class Stack<Item> extends LinkedList<Item> implements Iterable<Item> {
         size = 0;
     }
     
+    /**
+     * Pushes an item to the front of the Linked List stack.
+     * 
+     * @param item  Item to push
+     */
     public void push(Item item) {
         super.addToFront(item);
     }
     
+    /**
+     * Pops an item from the front of the Linked List stack.
+     * 
+     * @return  Item popped off the stack
+     */
     public Item pop() {
         return super.removeFirst();
     }

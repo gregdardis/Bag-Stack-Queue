@@ -17,6 +17,11 @@ public class Bag<Item> extends LinkedList<Item> implements Iterable<Item> {
         first = null;
     }
     
+    /**
+     * Adds an item to the front of the Linked List bag.
+     * 
+     * @param item Item to add
+     */
     public void add(Item item) {
         super.addToFront(item);
     }
