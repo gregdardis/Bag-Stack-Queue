@@ -56,7 +56,7 @@ public class Stack<Item> implements Iterable<Item> {
             intStack.push(i);
         }
         
-        System.out.println("\nSize after pushing " + numberToAdd + " ints: " + intStack.size());
+        System.out.println("\nSize after pushing " + numberToAdd + " ints starting from 0: " + intStack.size());
         System.out.println("Stack is empty: " + intStack.isEmpty());
         
         System.out.println("\nNow lets see all contents in the stack: ");

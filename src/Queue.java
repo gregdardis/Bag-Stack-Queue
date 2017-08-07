@@ -55,7 +55,7 @@ public class Queue<Item> implements Iterable<Item> {
             intQueue.enqueue(i);
         }
         
-        System.out.println("\nSize after add " + numberToAdd + " ints: " + intQueue.size());
+        System.out.println("\nSize after add " + numberToAdd + " ints starting from 0: " + intQueue.size());
         System.out.println("Queue is empty: " + intQueue.isEmpty());
         
         System.out.println("\nNow lets see all contents in the queue: ");

@@ -47,7 +47,7 @@ public class Bag<Item> implements Iterable<Item> {
             intBag.add(i);
         }
         
-        System.out.println("\nSize after adding " + numberToAdd + " ints: " + intBag.size());
+        System.out.println("\nSize after adding " + numberToAdd + " ints starting from 0: " + intBag.size());
         System.out.println("Bag is empty: " + intBag.isEmpty());
         Iterator<Integer> bagIterator = intBag.iterator();
         
